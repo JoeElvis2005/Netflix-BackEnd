@@ -1,0 +1,29 @@
+{% extends 'base_files/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/netflix_home.css' %}">
+{% endblock %}
+
+<body class="bg-dark">
+  {% block content %}
+  <div class="banner-movie  text-light" style="padding-top: 200px;">
+    <h1>{{background.title}}</h1>
+    <p>{{ background.description|safe }}</p>
+    <div class="background-playing">
+      {{ background.source|safe }}
+    </div>
+  </div>
+  <hr>
+  <div class="row my-5 mx-3">
+    {% for category in all_categories %}
+        {% if category.movie_set.all %}
+            <h2 class="text-light mt-2">{{ category.name }}</h2>
+            {% for movie in category.movie_set.all %}
+                {% include "components/single_movie.html" %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}        
+  </div>
+  {% endblock %}
+

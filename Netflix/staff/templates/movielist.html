@@ -1,0 +1,43 @@
+{% extends 'base_files/dashboard.html' %}
+{% load static %}
+{% block title  %} Movie List {% endblock%}
+{% block content %}
+    <h2 class="h2 mt-2">All movies in the server</h2>
+    
+    <div class="card shadow mt-2 ">
+        <div class="card-body">
+            <div class="text-end">
+                <a href="{% url 'admin_add_movie' %}" class="btn-netflix">Add New Movie</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">MovieName</th>
+                        <th scope="col">Category</th>
+                        <th scope="col text-center">View More</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for movie in movies%}
+                        <tr>
+                            <th scope="row">{{movie.id}}</th>
+                            <td>{{movie.title}}</td>
+                            <td>{{movie.category.name}}</td>
+                            <td>
+                                <a href="{% url 'moviedetails' movie.id %}" class="btn-netflix-icon">  
+                                    <!-- movie.id added after url is to pick the movieid of the clicked movie push it as a variable in url path leading to the view that gives details-->
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                            </td>
+                          </tr>
+                        {%endfor%}
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

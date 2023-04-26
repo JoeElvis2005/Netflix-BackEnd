@@ -1,0 +1,19 @@
+{% extends 'base_files/base.html' %} 
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+    {% block content %}
+    <div class="container-fluid">
+        <form action="{% url 'subscription'%}" method="POST">
+            {% csrf_token %} 
+            <h1> Payment Options </h1>
+            <div class="p-2">
+                {{ Pay|crispy }}
+            </div>
+            
+            <button type="submit" class="custom-btn m-2">Pay</button>
+        </form>
+    </div>
+    {% endblock %}
+

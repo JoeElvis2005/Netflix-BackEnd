@@ -1,0 +1,16 @@
+{% extends 'base_files/dashboard.html' %}
+{% load static %}
+{% block title%} {{ movie.title }} {% endblock %}
+ {% block content %}
+
+
+<div class="main-content">
+        {% if selected_movie.image %}
+            <img src="{{ selected_movie.image.url }}" alt="{{ selected_movie.title }}"> 
+            <!-- the .url added at the end is so that html can read it as a source not a string -->
+        {% endif %}    
+    <h2>{{selected_movie.title}}</h2>
+    <h3>{{selected_movie.descriptions}}</h3>
+    <h3></h3>
+</div>
+ {% endblock %} 

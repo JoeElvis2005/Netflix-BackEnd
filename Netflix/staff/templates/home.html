@@ -1,0 +1,92 @@
+{% extends 'base_files/dashboard.html' %}
+{% load static %}
+
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-5 m-3">Welcome back!</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- The top cards -->
+
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card border-0 shadow m-2 w-100 top-card">
+                    <div class="card-body text-center">
+                        <p class="text-center"><i class="bi bi-film m-1"></i></p>
+                        <h2 class="h5 text-center">Movies</h2>
+                        <p class="display-4 text-center">{{ movies.count }}</p>
+                        <!-- You can run querys like . count in template to prevent yuo making many variables in view. It allows you to user a common variable and add querys in front end to do its purpose while reducing queries in views. -->
+                        <!-- The .count is running a query in jinja that could be run in views that counts rows in a table -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card border-0 shadow m-2 w-100 top-card">
+                    <div class="card-body text-center">
+                        <p class="text-center"><i class="bi bi-people m-1"></i></p>
+                        <h2 class="h5 text-center">Users</h2>
+                        <p class="display-4 text-center">{{ users.count }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card border-0 shadow m-2 w-100 top-card">
+                    <div class="card-body text-center">
+                        <p class="text-center"><i class="bi bi-file-post m-1"></i></p>
+                        <h2 class="h5 text-center">Categories</h2>
+                        <p class="display-4 text-center">{{ categories.count }}</p>
+                    </div>
+                </div> 
+            </div>
+            <!-- The tables -->
+
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                <div class="card shadow mt-2 ">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h2>Movies</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">MovieName</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col text-center">View More</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    {% for movie in movies|slice:"5" %}
+                                    <!-- the slice allows you to cut off the list at a certain number -->
+                                    <!-- As u can see using movies as a var in views allows you to use movies differently for diff reasons in home.html unlike if u added a query to movies var  -->
+                                    <tr>
+                                        <th scope="row">{{movie.id}}</th>
+                                        <td>{{movie.title}}</td>
+                                        <td>{{movie.category.name}}</td>
+                                        <td>
+                                            <a href="{% url 'moviedetails' movie.id %}" class="btn-netflix-icon">  
+                                                <!-- movie.id added after url is to pick the movieid of the clicked movie push it as a variable in url path leading to the view that gives details-->
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                    {%endfor%}
+                                 
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}

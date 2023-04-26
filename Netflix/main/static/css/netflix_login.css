@@ -1,0 +1,81 @@
+:root{
+    --main-color: red;
+    --primary-color: black;
+    --text-grey: grey;
+    --text-light: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://assets.nflxext.com/ffe/siteui/vlv3/1ecf18b2-adad-4684-bd9a-acab7f2a875f/f603a7c6-d020-45d6-93f1-1e744ee1473e/KE-en-20230116-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    height: 120vh;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    text-align: center;
+}
+
+form h1{
+    color: var(--text-light)
+}
+
+form label{
+    color: var(--text-grey)
+}
+
+form{
+    display: inline-block;
+    width: 35vw;
+    height: 85vh;
+    background-color: rgba(0,0,0,0.8);
+    padding: 25px;
+    text-align:start;
+    cursor: pointer;
+}
+
+.custom-link{
+    text-decoration: none;
+    color: var(--text-grey);
+
+}
+
+.input-text{
+    display:block;
+    padding: 10px;
+    color: white;
+    /* background-color: var(--text-grey); */
+    border: none;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .input-text::placeholder{
+    color: rgb(65, 63, 63);
+}
+
+.custom-btn{
+    display: block;
+    width: 100%;
+    background-color: var(--main-color);
+    padding: 10px;
+    text-align: center;
+    color: var(--text-light);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+}
+nav{
+    padding: 20px;
+}
+.icon:hover{
+    background-color: rgba(240, 7, 7, 0.685);
+}

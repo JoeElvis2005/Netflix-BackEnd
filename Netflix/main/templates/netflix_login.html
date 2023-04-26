@@ -1,0 +1,29 @@
+{% extends 'base_files/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/netflix_login.css' %}">
+{% endblock %}
+
+    {% block content %}
+        
+    <nav>
+        <a href="{% url 'home' %}" class="icon">
+            <img src="{% static 'images/netflix-logo-png-2582.png' %}" alt="Netflix logo" width="125px" height="65px" class="logo">
+        </a>
+    </nav>
+    <div class="container">
+        <form method="POST" action="#">
+            <h1>Sign in</h1>
+            <input type="text" class="input-text" placeholder="Email or phone" name="email-phone" id="email-phone">
+            <input type="password" class="input-text" placeholder="Password" name="password" id="password">
+            <button type="submit" class="custom-btn">Sign in</button>
+            <a href="{% url 'dashboard' %}" class="custom-btn" style="margin-top: 10px;">
+                The owner
+            </a>
+            <input type="checkbox" name="remember-me" id="remember-me">
+            <label for="remember-me">Remember me</label>
+            <a href="#" class="custom-link">Need help?</a>
+        </form>
+    </div>
+    {% endblock %}

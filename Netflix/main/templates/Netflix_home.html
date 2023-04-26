@@ -1,0 +1,73 @@
+{% extends 'base_files/base.html' %} 
+{% load static %}
+
+{% block title %}
+  Netflix Kenya
+{% endblock %}
+
+{% block css %}
+ <link rel="stylesheet" href="{% static 'css/Netflix_home.css' %}">
+{% endblock %}
+
+{% block content %}
+      <section class="main-section">
+        <nav>
+          <img src="{% static 'images/netflix-logo-png-2582.png'%}"alt="Netflix Logo" height="65px" class="logo">
+          <a href="{% url 'login'%}" class="custom-btn attach">Sign in</a>
+        </nav>
+        <div class="cover-section">
+          <h1>Unlimited movies, Tv<br>shows, and more</h1>
+          <article>Watch anywhere. Cancel Anytime</article>
+          <p>Ready to watch? Enter your Email to create or start a membership.</p>
+          <form method="post" action="#" >
+            <input type="email" placeholder="Email Address" name="user-email" id="user-email">
+            <button type="submit" class="custom-btn">Get Started > </button>
+        </form>
+        </div>
+      </section>
+      <hr>
+      <section class="second-container">
+      <div class="flex">
+        <div class="second-section">
+          <h1 class="margin" >Enjoy on your TV.</h1>
+          <h2 class="unique">Watch on smart TVs, Playstation, Xbox,<br>Chromecast, Apple TV, Blue-ray players<br>and more</h2>
+        </div>
+        <div class="second-section"><img alt="TV" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" data-uia="our-story-card-img"></div>
+      </div>
+      </section>
+      <hr>
+      <section class="second-container">
+        <div class="flex-two">
+        <div>
+          <img alt="" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" data-uia="our-story-card-img">
+        </div>
+        <div class="second-section">
+          <h1>Download your<br>shows to watch<br> offline</h1>
+          <h2>Save your favourites easily and always<br>have something to watch.</h2>
+        </div>
+        </div>
+      </section>
+      <hr>
+      <section class="second-container">
+        <div class="flex-three">
+        <div class="second-section">
+          <h1>Watch Everywhere.</h1>
+          <h2>Stream unlimited movies and TVshows<br>on your phone, tablet, laptop and TV.</h2>
+        </div>
+        <div><img alt="" class="our-story-card-img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-ke.png" data-uia="our-story-card-img"></div>
+        </div>
+      </section>
+      <hr>
+      <section class="second-container">
+        <div class="flex-three">
+        <div >
+          <img alt="" class="our-story-card-img" src="https://occ-0-6275-6126.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABfpnX3dbgjZ-Je8Ax3xn0kXehZm_5L6-xe6YSTq_ucht9TI5jwDMqusWZKNYT8DfGudD0_wWVVTFLiN2_kaQJumz2iivUWbIbAtF.png?r=11f" data-uia="our-story-card-img">
+        </div>
+        <div class="second-section">
+          <h1>Create profiles for kids.</h1>
+          <h2>Send kids on adventures with their<br>favorite characters in a space made just<br>for them—free with your membership.</h2>
+        </div>
+        </div>
+      </section>
+      <hr>
+{% endblock %}

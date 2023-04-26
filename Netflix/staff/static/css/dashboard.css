@@ -1,0 +1,87 @@
+:root{
+    --main-color: rgba(240, 50, 50, 0.822);
+    --primary-color: black;
+    --text-grey: grey;
+    --text-light: white;
+    --primary-color-shade: rgba(24, 24, 24, 0.575);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    height: 150vh;
+    background-color: var(--primary-color-shade);
+    
+}
+
+.main, .sidebar{
+    position: absolute;
+    top: 0;
+    height: inherit;
+    display: inline-block;
+}
+.sidebar{    
+    width: 25vw;   
+    left: 0;
+    background-color: var(--main-color);
+    z-index: 1;
+    color: var(--text-light);
+}
+.main{
+    left: 25vw;
+    right: 0;
+    background-color: var(--text-light);
+}
+.sidebar .sidebar-item{
+    text-align: start;
+    font-size: 1.5rem;
+    display: block;
+}
+#netflix-logo{
+    width: 30px;
+    height: 30px;
+}
+ .sidebar a{
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 25px 18px;
+    margin: 5px 5px;
+    border-radius: 3px;
+ }
+
+.sidebar a:hover{
+    background-color: var(--text-light);
+    color: var(--main-color);
+}
+.sidebar .bi{
+    margin-right: 2rem !important;
+    padding-bottom: 5px !important;
+}
+.btn-netflix{
+    background-color: var(--main-color);
+    padding: 7px 14px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+.btn-netflix:hover{
+    background-color: var(--text-light);
+    color: var(--main-color);
+}
+
+.btn-netflix-icon{
+    color: var(--main-color) !important;
+}
+.btn-netflix-icon:hover{
+    color: red !important;
+}
+
+.top-card {
+    font-size: 1.8rem;
+}

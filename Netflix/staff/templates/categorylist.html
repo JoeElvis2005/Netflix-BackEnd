@@ -1,0 +1,44 @@
+{% extends 'base_files/dashboard.html' %}
+{% load static %}
+{% block title %}
+    Categories
+{% endblock %}
+
+{% block content %}
+    <div class="display-5">
+        <h2>Movie Categories</h2>
+    </div>
+
+    <div class="card shadow mt-2">
+        <div class="card-body">
+            <div class="text-end">
+                <a href="#" class="btn-netflix">Create Category</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">View More</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for categ in category %}
+                        <tr>
+                            <th scope="row" class="text-dark">{{ categ.id }}</th>
+                            <td>{{ categ.name }}</td>
+                            <td>
+                                <a href="#" class="btn-netflix-icon">  
+                                    <!-- movie.id added after url is to pick the movieid of the clicked movie -->
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                            </td>
+                          </tr>
+                          {%endfor%}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
