@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
     'main.apps.MainConfig',
     'staff.apps.StaffConfig',
-    'auth.apps.AuthConfig',
+    'authentication.apps.AuthenticationConfig',
     # the .app.{{app.name}}Config prevents confusion with the django apps above,
 
     'crispy_forms',

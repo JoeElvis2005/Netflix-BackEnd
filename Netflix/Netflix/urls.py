@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("main.urls")),
     path('staff/',include("staff.urls")),
-    path('auth/',include("auth.urls")),
+    path('authentication/',include("authentication.urls")),
 ]
 
 if settings.DEBUG:

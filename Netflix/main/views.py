@@ -1,68 +1,19 @@
 from django.shortcuts import render
 from .models import *
 from .forms import *
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 def home(request):
     return render (request,"Netflix_home.html")
 
-def login(request):
-    return render(request,"netflix_login.html")
+# def login(request):
+#     return render(request,"netflix_login.html")
 
 
-
+@login_required #This is a decorator
 def movie(request):
-
-#    movies = [
-#     {
-#         "name":"Stranger Things",
-#         "image":" https://applications-media.feverup.com/image/upload/f_auto,w_320,h_320/fever2/plan/photo/81e0e62a-b2c2-11ed-93a4-fa595f8401c7.jpg",
-#         "description":"Kids are more responsible than u think.Follow these kids as they save Hawkins."
-#     },
-#     {
-#         "name":"Red Notice",
-#         "image":" https://www.hollywoodreporter.com/wp-content/uploads/2021/11/Red-Notice-stars-Dwayne-Johnson-Gal-Gadot-and-Ryan-Reynolds-H-2021.jpg ",
-#         "description":" Dwayne Johnson,Ryan Reynolds out on a adventure all over the world."
-#     },
-#     {
-#         "name":"Sonic",
-#         "image":"https://cdn.mos.cms.futurecdn.net/AU8zH3dud8RdpXHMDXzthA-970-80.jpg.webp",
-#         "description":" The blue super fast hedgehog always saves the day ",
-#     },
-#     {
-#         "name":" Luca",
-#         "image":" https://media.wdwnt.com/2021/06/Luca-8-9316829.jpeg ",
-#         "description":" The little mermaid boy wants to be a human boy and wins a cup ",
-#     },
-#    ]
-#    series = [
-#     {
-#         "name":"Stranger Things",
-#         "image":" https://applications-media.feverup.com/image/upload/f_auto,w_320,h_320/fever2/plan/photo/81e0e62a-b2c2-11ed-93a4-fa595f8401c7.jpg",
-#         "description":"Kids are more responsible than u think.Follow these kids as they save Hawkins."
-#     },
-
-#     {
-#         "name":"Red Notice",
-#         "image":"https://www.hollywoodreporter.com/wp-content/uploads/2021/11/Red-Notice-stars-Dwayne-Johnson-Gal-Gadot-and-Ryan-Reynolds-H-2021.jpg",
-#         "description":" Dwayne Johnson,Ryan Reynolds out on a adventure all over the world."
-#     },
-#     {
-#         "name":"Sonic",
-#         "image":"https://cdn.mos.cms.futurecdn.net/AU8zH3dud8RdpXHMDXzthA-970-80.jpg.webp",
-#         "description":" The blue super fast hedgehog always saves the day ",
-#     },
-#     {
-#         "name":" Luca",
-#         "image":"https://media.wdwnt.com/2021/06/Luca-8-9316829.jpeg",
-#         "description":" The little mermaid boy wants to be a human boy and wins a cup "
-#     },
-# ]
-
-
-
-
 
    all_categories=Category.objects.all()
 
